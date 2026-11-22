@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Honda Brand -->
+    <color name="honda_red">#CC0000</color>
+    <color name="honda_red_dark">#A30000</color>
+    <color name="honda_red_light">#FF1A1A</color>
+
+    <!-- Neutrals -->
+    <color name="white">#FFFFFF</color>
+    <color name="off_white">#F7F7F7</color>
+    <color name="gray_50">#FAFAFA</color>
+    <color name="gray_100">#F0F0F0</color>
+    <color name="gray_200">#E0E0E0</color>
+    <color name="gray_400">#9E9E9E</color>
+    <color name="gray_600">#616161</color>
+    <color name="gray_800">#333333</color>
+    <color name="black">#1A1A1A</color>
+
+    <!-- Semantic -->
+    <color name="success">#2E7D32</color>
+    <color name="warning">#F57C00</color>
+    <color name="danger">#CC0000</color>
+    <color name="info">#1565C0</color>
+
+    <!-- Derived (for theme) -->
+    <color name="honda_red_ripple">#14CC0000</color>
+    <color name="scrim">#80000000</color>
+</resources>

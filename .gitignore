@@ -1,0 +1,40 @@
+# ---------- Gradle / Kotlin ----------
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+.kotlin/
+
+# ---------- Android Studio / IntelliJ ----------
+.idea/*
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+*.iml
+
+# ---------- Build output (JANGAN commit biner) ----------
+app/build/
+app/release/
+*.apk
+*.aab
+*.ap_
+*.dex
+baselineProfiles/
+output-metadata.json
+
+# ---------- Signing / kredensial ----------
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+local.properties
+.env
+.env.*
+secrets.properties
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini

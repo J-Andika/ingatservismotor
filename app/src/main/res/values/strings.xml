@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Ingat Servis Motor</string>
+    <string name="enter_new_odometer">Masukkan Odometer Baru</string>
+    <string name="update">Perbarui</string>
+    <string name="find_ahass">Cari AHASS</string>
+    <string name="history">Riwayat</string>
+    <string-array name="component_types">
+        <item>Oli</item>
+    </string-array>
+
+    <!-- Komponen khusus motor matic -->
+    <string-array name="component_types_matic">
+        <item>Oli</item>
+        <item>Oli Gardan</item>
+        <item>Busi</item>
+        <item>Filter Udara</item>
+        <item>V-Belt</item>
+    </string-array>
+
+    <!-- Komponen khusus motor bebek -->
+    <string-array name="component_types_bebek">
+        <item>Oli</item>
+        <item>Busi</item>
+        <item>Filter Udara</item>
+        <item>Rantai</item>
+    </string-array>
+
+    <!-- Komponen khusus motor kopling/sport -->
+    <string-array name="component_types_kopling">
+        <item>Oli</item>
+        <item>Busi</item>
+        <item>Filter Udara</item>
+        <item>Rantai</item>
+    </string-array>
+
+    <string-array name="motor_types">
+        <!-- Honda Bebek (≤125cc) -->
+        <item>Honda Revo 100</item>
+        <item>Honda Revo Fit</item>
+        <item>Honda Revo Absolute</item>
+        <item>Honda Blade 110</item>
+        <item>Honda Supra X 125</item>
+        <item>Honda Supra X 125 FI</item>
+        <item>Honda Supra GTR 150</item>
+        <!-- Honda Matic (≤160cc) -->
+        <item>Honda Beat</item>
+        <item>Honda Beat Street</item>
+        <item>Honda Beat Pop</item>
+        <item>Honda Genio</item>
+        <item>Honda Scoopy</item>
+        <item>Honda Vario 110</item>
+        <item>Honda Vario 125</item>
+        <item>Honda Vario 150</item>
+        <item>Honda Vario 160</item>
+        <item>Honda PCX 150</item>
+        <item>Honda PCX 160</item>
+        <item>Honda ADV 150</item>
+        <item>Honda ADV 160</item>
+        <item>Honda Freego 125</item>
+        <!-- Honda Sport (≤150cc) -->
+        <item>Honda Sonic 150R</item>
+        <item>Honda CB150R</item>
+        <item>Honda CB150 Verza</item>
+        <item>Honda CBR150R</item>
+        <item>Honda CRF150L</item>
+    </string-array>
+</resources>

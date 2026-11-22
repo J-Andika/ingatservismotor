@@ -1,0 +1,141 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.IngatServisMotor" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Brand Colors -->
+        <item name="colorPrimary">@color/honda_red</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/honda_red_light</item>
+        <item name="colorSecondary">@color/honda_red_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Surface -->
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorSurfaceVariant">@color/gray_50</item>
+        <item name="android:colorBackground">@color/off_white</item>
+        <item name="android:windowBackground">@color/off_white</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Component Styles -->
+        <item name="materialButtonStyle">@style/Widget.Honda.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.Honda.Card</item>
+        <item name="floatingActionButtonStyle">@style/Widget.Honda.FAB</item>
+        <item name="textInputStyle">@style/Widget.Honda.TextInput</item>
+
+        <!-- Dialog Theme -->
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Honda.Dialog</item>
+    </style>
+
+    <!-- ─── Buttons ─── -->
+
+    <style name="Widget.Honda.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="backgroundTint">@color/honda_red</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Widget.Honda.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="strokeColor">@color/honda_red</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/honda_red</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Widget.Honda.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/honda_red</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <!-- ─── Card ─── -->
+
+    <style name="Widget.Honda.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <!-- ─── FAB ─── -->
+
+    <style name="Widget.Honda.FAB" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/honda_red</item>
+        <item name="tint">@color/white</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Honda.Circle</item>
+    </style>
+
+    <!-- ─── TextInput ─── -->
+
+    <style name="Widget.Honda.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxStrokeColor">@color/honda_red</item>
+        <item name="hintTextColor">@color/honda_red</item>
+    </style>
+
+    <!-- ─── Dialog ─── -->
+
+    <style name="ThemeOverlay.Honda.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/honda_red</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Honda.Dialog</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.Honda.Dialog.Button.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.Honda.Dialog.Button.Negative</item>
+    </style>
+
+    <style name="Widget.Honda.Dialog.Button.Positive" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/honda_red</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <style name="Widget.Honda.Dialog.Button.Negative" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/honda_red</item>
+        <item name="android:textColor">@color/honda_red</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <!-- ─── Shapes ─── -->
+
+    <style name="ShapeAppearance.Honda.Circle" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearance.Honda.Dialog" parent="">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- ─── Typography ─── -->
+
+    <style name="TextAppearance.Honda.Display" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Honda.Headline" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Honda.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/gray_800</item>
+    </style>
+
+    <style name="TextAppearance.Honda.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/gray_600</item>
+    </style>
+
+    <style name="TextAppearance.Honda.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/gray_400</item>
+    </style>
+
+</resources>

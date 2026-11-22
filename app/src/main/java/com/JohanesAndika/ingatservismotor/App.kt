@@ -1,0 +1,23 @@
+package com.JohanesAndika.ingatservismotor
+
+import android.app.Application
+import android.util.Log
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
+
+class App : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        FirebaseApp.initializeApp(this)
+        Log.d("App", "FirebaseApp initialized")
+
+        // Configure Firestore settings ONCE, before any Activity accesses it
+        val db = FirebaseFirestore.getInstance()
+        val settings = FirebaseFirestoreSettings.Builder()
+            .setPersistenceEnabled(true)
+            .build()
+        db.firestoreSettings = settings
+        Log.d("App", "Firestore settings applied (persistence enabled)")
+    }
+}
