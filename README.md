@@ -90,14 +90,35 @@ echo "sdk.dir=/path/to/Android/Sdk" > local.properties
 Atau buka folder ini langsung di Android Studio lalu **Run ▶**.
 
 ### Konfigurasi Firebase
-Proyek ini memakai Firebase, jadi butuh `app/google-services.json`:
-1. Buat project di [Firebase Console](https://console.firebase.google.com/).
-2. Tambahkan Android app dengan package name `com.JohanesAndika.ingatservismotor`.
-3. Aktifkan **Authentication → Email/Password** dan **Cloud Firestore**.
-4. Unduh `google-services.json` → taruh di folder `app/`.
-5. Buat index/collection Firestore: `users/{uid}/vehicles`, `users/{uid}/logs`.
 
-> ⚠️ `google-services.json` yang ada di repo ini milik project Firebase penulis dan memang bersifat *client-side* (ikut tertanam di APK). Kalau kamu memakai project sendiri, **ganti file tersebut**. Pastikan **Firestore Security Rules** ketat (`request.auth.uid == userId`) karena API key client tidak menjaga data.
+`app/google-services.json` **tidak disertakan di repo** karena memuat API key. Buat sendiri:
+
+1. Buat project di [Firebase Console](https://console.firebase.google.com/).
+2. Tambahkan Android app dengan package name `com.JohanesAndika.ingatservismotor`,
+   lalu daftarkan SHA-1 debug **dan** release kamu (Project settings → Your apps).
+3. Aktifkan **Authentication → Email/Password** dan **Cloud Firestore**.
+4. Unduh `google-services.json` → taruh di `app/google-services.json`
+   (sudah masuk `.gitignore`, jangan pernah di-commit).
+   Struktur contohnya ada di [`app/google-services.json.example`](app/google-services.json.example).
+5. Buat collection Firestore: `users/{uid}/vehicles`, `users/{uid}/logs`.
+
+Kalau file itu belum ada, sinkronisasi Gradle akan gagal dengan
+`File google-services.json is missing`.
+
+**CI:** workflow GitHub Actions membuat file tersebut saat build dari repository secret
+`GOOGLE_SERVICES_JSON_B64` (isi `google-services.json` yang di-encode base64):
+
+```bash
+base64 -w0 app/google-services.json | gh secret set GOOGLE_SERVICES_JSON_B64
+```
+
+> ⚠️ API key Firebase untuk Android bersifat *client-side* — nilainya selalu bisa
+> diekstrak dari APK (`strings`/`aapt dump`). Karena itu **wajib dibatasi** di Google Cloud
+> Console (Application restrictions → Android apps: package name + SHA-1, dan API
+> restrictions → hanya API Firebase yang dipakai). Tanpa pembatasan, siapa pun bisa
+> memakai key itu untuk memanggil Firebase Auth/Firestore project kamu.
+> Aktifkan juga **Firestore Security Rules** ketat (`request.auth.uid == userId`)
+> dan **Firebase App Check** untuk pertahanan berlapis.
 
 ---
 

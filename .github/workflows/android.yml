@@ -28,6 +28,17 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Materialize google-services.json from secret
+        env:
+          GS_B64: ${{ secrets.GOOGLE_SERVICES_JSON_B64 }}
+        run: |
+          if [ -z "$GS_B64" ]; then
+            echo "::error::Secret GOOGLE_SERVICES_JSON_B64 belum diset — google-services.json tidak bisa dibuat."
+            exit 1
+          fi
+          echo "$GS_B64" | base64 -d > app/google-services.json
+          echo "google-services.json dibuat ($(wc -c < app/google-services.json) byte)"
+
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace --no-daemon
 
