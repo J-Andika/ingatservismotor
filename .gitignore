@@ -27,6 +27,7 @@ output-metadata.json
 # ---------- Signing / kredensial ----------
 *.jks
 *.keystore
+.keystore/
 keystore.properties
 signing.properties
 local.properties

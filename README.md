@@ -34,6 +34,28 @@ Aplikasi Android native (Kotlin) untuk membantu pemilik sepeda motor Honda (≤2
 
 ---
 
+---
+
+## 📱 Tampilan Aplikasi
+
+Screenshot diambil dari build **release v1.0** di emulator Android 14 (API 34), 720×1280.
+
+| Login | Registrasi | Dashboard (Garasi) |
+|:--:|:--:|:--:|
+| <img src="docs/screenshots/01-login.png" width="230"> | <img src="docs/screenshots/02-register.png" width="230"> | <img src="docs/screenshots/03-dashboard.png" width="230"> |
+
+| Detail Kendaraan — Component Health | Catat Servis | Riwayat Servis |
+|:--:|:--:|:--:|
+| <img src="docs/screenshots/04-vehicle-detail.png" width="230"> | <img src="docs/screenshots/05-input-servis.png" width="230"> | <img src="docs/screenshots/06-riwayat.png" width="230"> |
+
+| Profil & Uji Notifikasi | Katalog Komponen |
+|:--:|:--:|
+| <img src="docs/screenshots/07-profil.png" width="230"> | <img src="docs/screenshots/08-katalog.png" width="230"> |
+
+> Data pada screenshot adalah data uji (akun demo, Honda Vario 125, odometer 12.500 km).
+
+---
+
 ## 🧱 Tech Stack
 
 - **Bahasa:** Kotlin
@@ -99,6 +121,7 @@ ingatservismotor/
 │   ├── src/main/res/                    # layout, drawable, values
 │   └── build.gradle.kts
 ├── docs/
+│   ├── screenshots/                     # Screenshot aplikasi (README)
 │   ├── DESIGN.md                        # Design token & panduan visual
 │   └── QA-REPORT.md                     # Laporan QA & rencana perbaikan
 ├── gradle/libs.versions.toml
@@ -111,6 +134,33 @@ ingatservismotor/
 
 Workflow `.github/workflows/android.yml` jalan di setiap push/PR ke `main`:
 `./gradlew assembleDebug` → `testDebugUnitTest` → upload APK sebagai artifact GitHub Actions.
+
+---
+
+## 📦 Download APK
+
+Build siap-pakai (signed release) tersedia di halaman **[Releases](https://github.com/J-Andika/ingatservismotor/releases/latest)**:
+`ingatservismotor-v1.0.apk` — minSdk 24 (Android 7.0+), ukuran ± 10,5 MB.
+
+APK ditandatangani dengan keystore rilis **lokal** yang tidak di-commit ke repo
+(`.keystore/`, `keystore.properties` ada di `.gitignore`). Untuk build release sendiri:
+
+```bash
+# 1. buat keystore
+keytool -genkeypair -v -keystore .keystore/release.jks -alias <alias> \
+        -keyalg RSA -keysize 4096 -validity 10000
+
+# 2. isi keystore.properties (root project)
+#    storeFile=.keystore/release.jks
+#    storePassword=...
+#    keyAlias=<alias>
+#    keyPassword=...
+
+# 3. build
+./gradlew assembleRelease
+# hasil: app/build/outputs/apk/release/app-release.apk
+```
+Kalau `keystore.properties` tidak ada (mis. di CI), build release tetap jalan tetapi APK-nya unsigned.
 
 ---
 
